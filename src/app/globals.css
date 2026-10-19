@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #1e293b;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 180, 0, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(245, 180, 0, 0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.btn-phone-pulse {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* Rich HTML content styling from Google Sheet */
+.sheet-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #475569;
+}
+
+.sheet-content p:last-child {
+  margin-bottom: 0;
+}
+
+.sheet-content a {
+  color: #0d5cab;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.sheet-content a:hover {
+  color: #f5b400;
+}
+
+.sheet-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sheet-content ul li {
+  position: relative;
+  padding-left: 1.75rem;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.sheet-content ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  background-color: #fef3c7;
+  color: #d97706;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-content ol {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.25rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.sheet-content ol li {
+  counter-increment: step-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.sheet-content ol li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  background-color: #0d5cab;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-content h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+}
+
+.sheet-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.sheet-content .service-cards,
+.sheet-content .leak-sources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.sheet-content .card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid #f5b400;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sheet-content .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(15, 23, 42, 0.12);
+}
+
+.sheet-content .card h3 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+/* Template specific clip paths */
+.clip-angled-header {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 35%);
+}
+
+.clip-worker-badge {
+  clip-path: polygon(0 38%, 100% 0, 100% 100%, 0 100%);
+}
+
+.clip-corner-fold {
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
