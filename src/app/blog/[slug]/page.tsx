@@ -22,6 +22,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.seoTitle,
     description: post.metaDescription,
+    alternates: {
+      canonical: `https://www.chimneysweeprockwall.site${post.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

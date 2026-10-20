@@ -26,6 +26,13 @@ import {
 export const metadata: Metadata = {
   title: HOME_PAGE.seoTitle,
   description: HOME_PAGE.metaDescription,
+  alternates: {
+    canonical: "https://www.chimneysweeprockwall.site/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function HomePage() {

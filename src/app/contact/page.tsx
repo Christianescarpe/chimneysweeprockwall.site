@@ -15,6 +15,13 @@ import {
 export const metadata: Metadata = {
   title: `Contact | ${BUSINESS_INFO.name}`,
   description: HOME_PAGE.metaDescription,
+  alternates: {
+    canonical: "https://www.chimneysweeprockwall.site/contact/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function ContactPage() {

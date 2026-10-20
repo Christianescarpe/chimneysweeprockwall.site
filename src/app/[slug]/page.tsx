@@ -36,6 +36,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: service.seoTitle,
       description: service.metaDescription,
+      alternates: {
+        canonical: `https://www.chimneysweeprockwall.site${service.slug}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
 
@@ -44,6 +51,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: location.seoTitle,
       description: location.metaDescription,
+      alternates: {
+        canonical: `https://www.chimneysweeprockwall.site${location.slug}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
 

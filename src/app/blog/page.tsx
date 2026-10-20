@@ -9,6 +9,13 @@ import { BUSINESS_INFO, BLOG_PAGES, CHIMNEY_IMAGES } from "@/data/sheetData";
 export const metadata: Metadata = {
   title: `Blog | ${BUSINESS_INFO.name}`,
   description: BLOG_PAGES[0]?.metaDescription || "",
+  alternates: {
+    canonical: "https://www.chimneysweeprockwall.site/blog/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function BlogIndexPage() {
